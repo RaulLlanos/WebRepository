@@ -136,7 +136,7 @@
           <!-- offcanvas-header -->
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Explora nuestras obras por:</h5><!--titulo del offcanvas-->
-            <button type="button" class="btn-close btn-close" data-bs-dismiss="offcanvas"
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
               aria-label="Close"></button>
           </div><!-- offcanvas-header end -->
           <!-- offcanvas-body -->
@@ -222,134 +222,54 @@
         <a class="nav-link disabled">Disabled</a>
       </li>
     </ul>
-    <!-- carousel interval -->
 
-    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" data-bs-theme="dark">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="0" class="active"
-          aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="1"
-          aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="2"
-          aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="2500">
-          <a href="./pinturas/arte pinturas/pintura1.html">
-            <img src="./img/fondo-patron-onda-abstracta-3d.jpg" class="d-block w-100" alt="Impresionismo asincronico">
-            <div class="carousel-caption">
-              <h5 class="font-monospace text-start">Impresionismo asincronico</h5>
-            </div>
-          </a>
-        </div>
-        <div class="carousel-item" data-bs-interval="2500">
-          <a href="./pinturas/arte pinturas/pintura2.html">
-            <img src="./img/al óleo.jpg" class="d-block w-100" alt="Huellas karmicas">
-            <div class="carousel-caption">
-              <h5 class="font-monospace text-start">Huellas karmicas</h5>
-            </div>
-          </a>
-        </div>
-        <div class="carousel-item" data-bs-interval="2500">
-          <a href="./esculturas/Josephine-Bakhita.html">
-            <img src="./img/Josephine Bakhita.jpg" class="d-block w-100" alt="Josephine Bakhita">
-            <div class="carousel-caption">
-              <h5 class="font-monospace text-start">Josephine Bakhita</h5>
-            </div>
-          </a>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-
-    </div>
-
-      <!-- FORMULARIO -->
+      <!-- PUBLICAR OBRA -->
     
     <div class="container-fluid bg-dark text-white">
 
       <div class="container-fluid text-center p-5 text-warning">
-        <h1>FORMULARIO</h1>
+        <h1>PUBLICAR</h1>
       </div>
 
-      <form class="row g-3 needs-validation p-3" novalidate>
-        <div class="col-md-4">
-          <label for="validationCustom01" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="validationCustom01" value="" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
+      <form>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Email address</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
         </div>
-        <div class="col-md-4">
-          <label for="validationCustom02" class="form-label">Apellidos</label>
-          <input type="text" class="form-control" id="validationCustom02" value="" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-        </div>
-        <div class="col-md-4">
-          <label for="validationCustomUsername" class="form-label">Usuario</label>
-          <div class="input-group has-validation">
-            <span class="input-group-text" id="inputGroupPrepend">@</span>
-            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-            <div class="invalid-feedback">
-              Please choose a username.
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <label for="validationCustom03" class="form-label">Teléfono</label>
-          <input type="number" class="form-control" id="validationCustom03" value="569" required>
-          <div class="invalid-feedback">
-            Please provide a valid phone.
-          </div>
-        </div>
-        <div class="col-md-3">
-          <label for="validationCustom04" class="form-label">Comuna</label>
-          <select class="form-select" id="validationCustom04" required>
-            <option selected disabled value="">Choose...</option>
-            <option>...</option>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Example select</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>Pintura</option>
+            <option>Escultura</option>
+            <option>Orfebrería</option>
+            <option>Tejido</option>
+            <option>Otro</option>
           </select>
-          <div class="invalid-feedback">
-            Please select a valid state.
-          </div>
         </div>
-        <!-- <div class="col-md-3">
-          <label for="validationCustom05" class="form-label">Zip</label>
-          <input type="text" class="form-control" id="validationCustom05" required>
-          <div class="invalid-feedback">
-            Please provide a valid zip.
-          </div>
+        <!-- <div class="form-group">
+          <label for="exampleFormControlSelect2">Example multiple select</label>
+          <select multiple class="form-control" id="exampleFormControlSelect2">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
         </div> -->
-        <form class="was-validated">
-          <div class="mb-3">
-            <label for="validationTextarea" class="form-label">Textarea</label>
-            <textarea class="form-control" id="validationTextarea" placeholder="Required example textarea" required></textarea>
-            <div class="invalid-feedback">
-              Please enter a message in the textarea.
-            </div>
-          </div>
-        <div class="col-12">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-            <label class="form-check-label" for="invalidCheck">
-              Agree to terms and conditions
-            </label>
-            <div class="invalid-feedback">
-              You must agree before submitting.
-            </div>
-          </div>
-        </div>
-        <div class="col-12">
-          <button class="btn btn-primary" type="submit">Submit form</button>
-        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Example textarea</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div><br>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+            <label class="custom-file-label" for="customFileLang">Seleccionar Archivo de arte</label>
+        </div><br>
+        <p class="text-warning p-3">
+            El administrador vera las especificaciones y archivos, si cumple con los requisitos se le avisara al correo.
+        </p>
       </form>
+
+      
     </div>
     
 

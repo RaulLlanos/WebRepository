@@ -274,13 +274,14 @@
     
     <div class="container-fluid bg-dark text-white">
 
-      <div class="container-fluid text-center p-5 text-warning">
-        <h1>FORMULARIO</h1>
+      <div class="container-fluid text-center pt-4 text-warning">
+        <h1>Contáctenos</h1>
+        <p class="text-warning">Comentenos en qué podemos ayudarle.</p>
       </div>
 
-      <form class="row g-3 needs-validation p-3" novalidate>
+      <form class="row g-3 needs-validation pb-3" novalidate>
         <div class="col-md-4">
-          <label for="validationCustom01" class="form-label">Nombre</label>
+          <label for="validationCustom01" class="form-label">Nombres</label>
           <input type="text" class="form-control" id="validationCustom01" value="" required>
           <div class="valid-feedback">
             Looks good!
@@ -294,32 +295,14 @@
           </div>
         </div>
         <div class="col-md-4">
-          <label for="validationCustomUsername" class="form-label">Usuario</label>
-          <div class="input-group has-validation">
-            <span class="input-group-text" id="inputGroupPrepend">@</span>
-            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-            <div class="invalid-feedback">
-              Please choose a username.
-            </div>
-          </div>
+          <label for="validationDefaultEmail" class="form-label">Correo</label>
+          <input type="email" class="form-control" id="validationDefaultEmail"required />
         </div>
         <div class="col-md-6">
-          <label for="validationCustom03" class="form-label">Teléfono</label>
-          <input type="number" class="form-control" id="validationCustom03" value="569" required>
-          <div class="invalid-feedback">
-            Please provide a valid phone.
-          </div>
+          <label for="validationCustom03" class="form-label">Asunto</label>
+          <input type="text" class="form-control" id="validationCustom03" value="" required>
         </div>
-        <div class="col-md-3">
-          <label for="validationCustom04" class="form-label">Comuna</label>
-          <select class="form-select" id="validationCustom04" required>
-            <option selected disabled value="">Choose...</option>
-            <option>...</option>
-          </select>
-          <div class="invalid-feedback">
-            Please select a valid state.
-          </div>
-        </div>
+        
         <!-- <div class="col-md-3">
           <label for="validationCustom05" class="form-label">Zip</label>
           <input type="text" class="form-control" id="validationCustom05" required>
@@ -329,25 +312,25 @@
         </div> -->
         <form class="was-validated">
           <div class="mb-3">
-            <label for="validationTextarea" class="form-label">Textarea</label>
-            <textarea class="form-control" id="validationTextarea" placeholder="Required example textarea" required></textarea>
+            <label for="validationTextarea" class="form-label"></label>
+            <textarea class="form-control" id="validationTextarea" placeholder="¿Cuál es su consulta?" required></textarea>
             <div class="invalid-feedback">
-              Please enter a message in the textarea.
+              Debe ingresar un mensaje.
             </div>
           </div>
         <div class="col-12">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
             <label class="form-check-label" for="invalidCheck">
-              Agree to terms and conditions
+              Acepto los terminos y condiciones
             </label>
             <div class="invalid-feedback">
-              You must agree before submitting.
+              Debe aceptar los terminos y condiciones.
             </div>
           </div>
         </div>
         <div class="col-12">
-          <button class="btn btn-primary" type="submit">Submit form</button>
+          <button class="btn btn-primary" type="submit">Enviar</button>
         </div>
       </form>
     </div>

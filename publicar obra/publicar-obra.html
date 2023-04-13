@@ -227,15 +227,16 @@
     
     <div class="container-fluid bg-dark text-white">
 
-      <div class="container-fluid text-center p-5 text-warning">
+      <div class="container-fluid text-center pt-5 text-warning">
         <h1>PUBLICAR</h1>
+        <p class="text-warning">Rellena los datos de tu obra y agrega una o más fotografías de ella.</p>
       </div>
 
       <form class="p-3">
         <div class="form-group">
           <label for="exampleFormControlInput1">Correo eletrónico</label>
           <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
+        </div><br>
         <div class="form-group">
           <label for="exampleFormControlSelect1">Categoría</label>
           <select class="form-control" id="exampleFormControlSelect1">
@@ -245,7 +246,7 @@
             <option>Tejido</option>
             <option>Otro</option>
           </select>
-        </div>
+        </div><br>
         <!-- <div class="form-group">
           <label for="exampleFormControlSelect2">Example multiple select</label>
           <select multiple class="form-control" id="exampleFormControlSelect2">
@@ -260,12 +261,16 @@
           <label for="exampleFormControlTextarea1">Descripción</label>
           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div><br>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Historia de la obra</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div><br>
         <div class="custom-file">
             <input type="file" class="custom-file-input" id="customFileLang" lang="es">
-            <label class="custom-file-label" for="customFileLang">Seleccionar Archivo de arte</label>
+            <label class="custom-file-label text-center" for="customFileLang">Cliquee aquí para seleccionar las imágenes de la pieza.</label>
         </div><br>
-        <p class="text-bg-warning rounded-4 fw-bold p-2">
-            El administrador vera las especificaciones y archivos, si cumple con los requisitos se le avisara al correo.
+        <p class="text-bg-warning rounded-4 fw-bold p-2 text-center">
+            El administrador vera los datos compartidos y archivos, si cumple con los requisitos se le avisara al correo.
         </p>
       </form>
 

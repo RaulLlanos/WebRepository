@@ -1,251 +1,322 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Grupo Cero</title>
-        <!-- bootstrap 5.3 alpha3 -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-        <!-- incons cdn -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-        <style>
-          .nav-scroller {
-          position: relative;
-          z-index: 2;
-          height: 2.75rem;
-          overflow-y: hidden;
-        }
-          .nav-scroller .nav {
-          display: flex;
-          flex-wrap: nowrap;
-          padding-bottom: 1rem;
-          margin-top: -1px;
-          overflow-x: auto;
-          text-align: center;
-          white-space: nowrap;
-          -webkit-overflow-scrolling: touch;
-        }
-        </style>
-        
-    </head>
-    <body>
-        <!-- navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
-          <!-- al cambiar los break-points de la barra, conciderar que hay elementes dentro de esta a los que también habrá que cambiarlos -->
-          <div class="container-fluid">
-            <!-- icono -->
-            <a class="navbar-brand" href="#">Grupo Cero</a><img src="./img/logo.avif" height="100">
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- offcanvas -->
-            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
-              <!-- offcanvas-header -->
-              <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Grupo Cero</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div><!-- offcanvas-header end -->
-              <!-- offcanvas-body -->
-              <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3"><!-- nav-items list -->
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <!-- nav-item dropdown -->
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <!-- dropdown-menu -->
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li>
-                        <hr class="dropdown-divider">
-                      </li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul><!-- dropdown-menu end -->
-                  </li><!-- nav-item dropdown end -->
-                </ul><!-- nav-items list end -->
-                <!-- search box -->
-                <form class="d-flex mt-3 mt-lg-0" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-success bi-search" type="submit"></button>
-                </form><!-- search box end -->
-              </div><!-- offcanvas-body end -->
-            </div><!-- offcanvas end -->
-          </div><!-- container-fluid end -->
-        </nav><!-- navbar end -->
-        <div class="nav-scroller bg-body shadow-sm">
-          <nav class="nav" aria-label="Secondary navigation">
-            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
-            <a class="nav-link" href="#">
-              Friends
-              <span class="badge text-bg-light rounded-pill align-text-bottom">27</span>
-            </a>
-            <a class="nav-link" href="#">Explore</a>
-            <a class="nav-link" href="#">Suggestions</a>
-            <a class="nav-link" href="#">Link</a>
-            <a class="nav-link" href="#">Link</a>
-            <a class="nav-link" href="#">Link</a>
-            <a class="nav-link" href="#">Link</a>
-            <a class="nav-link" href="#">Link</a>
-          </nav>
-        </div>
 
-        <!-- datos de la imagen -->
-    <div class="container-fluid mt-4">
-        <div class="row">
-        <div class="col-md-4">
-            <h1 class="text-uppercase">Josephine-Bakhita</h1>
-            <img src="../img/Josephine Bakhita.jpg" class="img-fluid">
-        </div>
-        <div class="col-md-4 mt-4">
-            <h2>Bio</h2>
-            <div class="table-responsive">
-            <table class="table">
-                <tbody>
-                <tr>
-                    <td class="h6 text-capitalize">Tipo</td>
-                    <td class="text-end">Escultura</td>
-                </tr>
-                <tr>
-                    <td class="h6 text-capitalize">Nombre</td>
-                    <td class="text-end">Let the oppressed go free</td>
-                </tr>
-                <tr>
-                    <td class="h6 text-capitalize">Representa</td>
-                    <td class="text-end">Josephine Bakhita</td>
-                </tr>
-                <tr>
-                    <td class="h6 text-capitalize">tamaño</td>
-                    <td class="text-end">Grande</td>
-                </tr>
-                <tr>
-                    <td class="h6 text-capitalize">Artista</td>
-                    <td class="text-end">Timothy Schmalz</td>
-                </tr>
-                </tbody>
-            
-            </table>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grupo Cero</title>
+  <!-- bootstrap 5.3 alpha3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <!-- incons cdn -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+</head>
+
+<body>
+<!-- Jumbotron -->
+<div class="p-3 text-center bg-white border-bottom">
+  <div class="container">
+    <div class="row">
+      <!-- Left elements -->
+      <div class="col-5 col-md-4 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0">
+
+        <a class="text-decoration-none text-reset" href="#"><img
+            style="height: 35px; width: 80px; background-color: #55595c;" class="d-inline-block" />
+          <span class="h5 d-none d-lg-inline-flex">Grupo<strong>Cero</strong></span>
+        </a>
+      </div><!-- Left elements end -->
+
+      <!-- Center elements -->
+      <!-- search box -->
+      <div class="col-7 col-md-4">
+        <form class="d-flex input-group w-auto my-auto mb-3 mb-md-0" role="search">
+          <input autocomplete="off" class="form-control rounded" type="search" placeholder="Search"
+            aria-label="Search">
+          <span class="btn btn-success rounded d-none d-lg-flex"><i class="bi bi-search"></i></span>
+        </form><!-- search box end -->
+      </div><!-- Center elements end -->
+
+      <!-- Right elements -->
+      <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
+        <div class="d-flex">
+          <!-- Cart 
+            <a class="text-decoration-none text-reset me-3" href="#">
+              <span class="bi bi-cart-fill"></span>
+              <span class="badge rounded-pill bg-danger">1</span>
+            </a>
+            -->
+
+          <!-- Notification 
+            <div class="dropdown">
+              <a class="text-decoration-none text-reset me-3 dropdown" href="#" id="navbarDropdownMenuLink"
+                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-bell-fill"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Some news</a></li>
+                <li><a class="dropdown-item" href="#">Another news</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
             </div>
+            -->
+
+          <!-- usuario -->
+          <div>
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdownMenuLink"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle d-md-none"
+                height="22" alt="Portrait of a Woman" loading="lazy" />
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
+                class="rounded-circle d-md-block d-none" height="35" alt="Portrait of a Woman" loading="lazy" />
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <a class="dropdown-item" href="#">
+                  Mis obras
+                  <span class="badge text-bg-warning">27</span>
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="../publicar obra/publicar-obra.html">Publicar nueva obra</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Mis solicitudes</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Salir</a>
+              </li>
+            </ul>
+          </div><!-- usuario end -->
         </div>
-        <div class="col-md-4 mt-4">
-            <h2>Más Información</h2>
-            <div class="table-responsive">
-            <table class="table">
-                <tbody>
-                <tr>
-                    <td class="h6">Esta obra de arte representa a Josephine Bakhita
-                        patrona de las víctimas de la trata de personas.
-                    </td>
-                </tr>
-                <!-- <tr>
+      </div><!-- Right elements end -->
+    </div>
+  </div>
+</div><!-- Jumbotron end -->
+
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg bg-light" aria-label="Offcanvas navbar large">
+  <!-- al cambiar los break-points de la barra, conciderar que hay elementes dentro de esta a los que también habrá que cambiarlos -->
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#!"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
+      aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- offcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+      <!-- offcanvas-header -->
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Explora nuestras obras por:</h5>
+        <!--titulo del offcanvas-->
+        <button type="button" class="btn-close btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div><!-- offcanvas-header end -->
+      <!-- offcanvas-body -->
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+          <li class="navbar-text d-none d-lg-flex fw-bold text-black">Explora nuestras obras por:</li>
+          <!-- Categoría dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Categoría
+            </a>
+            <!-- Categoría menu -->
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Categoría 1</a></li>
+              <li><a class="dropdown-item" href="#">Categoría 2</a></li>
+              <li><a class="dropdown-item" href="#">Categoría 3</a></li>
+            </ul><!-- Categoría menu end -->
+          </li><!-- Categoría dropdown end -->
+          <!-- Artista dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Artista
+            </a>
+            <!-- Artista menu -->
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Artista 1</a></li>
+              <li><a class="dropdown-item" href="#">Artista 2</a></li>
+              <li><a class="dropdown-item" href="#">Artista 3</a></li>
+            </ul><!-- Artista menu end -->
+          </li><!-- Artista dropdown end -->
+          <!-- Concepto dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Concepto
+            </a>
+            <!-- Concepto menu -->
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Concepto 1</a></li>
+              <li><a class="dropdown-item" href="#">Concepto 2</a></li>
+              <li><a class="dropdown-item" href="#">Concepto 3</a></li>
+            </ul><!-- Concepto menu end -->
+          </li><!-- Concepto dropdown end -->
+        </ul>
+      </div><!-- offcanvas-body end -->
+    </div><!-- offcanvas end -->
+  </div><!-- container-fluid end -->
+</nav><!-- navbar end -->
+
+  <!-- datos de la imagen -->
+  <div class="container-fluid mt-4">
+    <div class="row">
+      <div class="col-md-4">
+        <h1 class="text-uppercase">Josephine-Bakhita</h1>
+        <img src="../img/Josephine Bakhita.jpg" class="img-fluid">
+      </div>
+      <div class="col-md-4 mt-4">
+        <h2>Bio</h2>
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td class="h6 text-capitalize">Tipo</td>
+                <td class="text-end">Escultura</td>
+              </tr>
+              <tr>
+                <td class="h6 text-capitalize">Nombre</td>
+                <td class="text-end">Let the oppressed go free</td>
+              </tr>
+              <tr>
+                <td class="h6 text-capitalize">Representa</td>
+                <td class="text-end">Josephine Bakhita</td>
+              </tr>
+              <tr>
+                <td class="h6 text-capitalize">tamaño</td>
+                <td class="text-end">Grande</td>
+              </tr>
+              <tr>
+                <td class="h6 text-capitalize">Artista</td>
+                <td class="text-end">Timothy Schmalz</td>
+              </tr>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+      <div class="col-md-4 mt-4">
+        <h2>Más Información</h2>
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td class="h6">Esta obra de arte representa a Josephine Bakhita
+                  patrona de las víctimas de la trata de personas.
+                </td>
+              </tr>
+              <!-- <tr>
                     <td class="h6"></td>
                     <td class="text-end"></td>
                 </tr> -->
-                
-                </tbody>
-            
-            </table>
-            </div>
+
+            </tbody>
+
+          </table>
         </div>
-        </div>
+      </div>
     </div>
-        <!-- Footer -->
-    <footer class="text-center text-lg-start bg-white text-muted">
-        <!-- Section: Social media -->
-        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-  
-        </section>
-        <!-- Section: Social media -->
-  
-        <!-- Section: Links  -->
-        <section class="">
-          <div class="container text-center mt-5">
-            <!-- Grid row -->
-            <div class="row mt-3">
-              <!-- Grid column -->
-              <div class="col-sm-6 col-md-3 mx-auto mb-4">
-                <!-- Content -->
-                <h6 class="text-uppercase  fw-bold mb-4">
-                  Grupo cero
-                </h6>
-                <p>
-                  Somos un grupo de artistas plásticos dedicados a la pintura, 
-                  escultura, orfebrería, tejido y otras expresiones artísticas.
-  
-                </p>
-              </div>
-              <!-- Grid column -->
-  
-              <!-- Grid column -->
-              <div class="col-sm-6 col-md-3 mx-auto mb-4">
-                <!-- Links -->
-                <h6 class="text-uppercase fw-bold mb-4">
-                  Páginas
-                </h6>
-                <p>
-                  <a href="#!" class="text-reset">inicio</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-reset">nosotros</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-reset">equipo</a>
-                </p>
-              </div>
-              <!-- Grid column -->
-  
-              <!-- Grid column -->
-              <div class="col-sm-6 col-md-3 mx-auto mb-4">
-                <!-- Links -->
-                <h6 class="text-uppercase fw-bold mb-4">
-                  Nuestras redes
-                </h6>
-                <p>
-                  <a href="#!"><i class="bi bi-twitter text-reset"></i></a>
-                  <a href="#!" class="text-reset d-none d-sm-inline-block d-lg-none ms-2">Twitter</a>
-                </p>
-                <p>
-                  <a href="#!"><i class="bi-instagram"></i></a>
-                  <a href="#!" class="text-reset d-none d-sm-inline-block d-lg-none ms-2">Instagram</a>
-                </p>
-                <p>
-                  <a href="#!"><i class="bi bi-facebook"></i></a>
-                  <a href="#!" class="text-reset d-none d-sm-inline-block d-lg-none ms-2">Facebook</a>
-                </p>
-              </div>
-              <!-- Grid column -->
-  
-              <!-- Grid column -->
-              <div class="col-sm-6 col-md-3 mx-auto mb-md-0 mb-4">
-                <!-- Links -->
-                <h6 class="text-uppercase fw-bold mb-4">contacto</h6> Antonio Varas 666, Providencia</p>
-                <p>
-                  GrupoCero@duocuc.cl
-                </p>
-                <p>+ 569 4565 9878</p>
-                <p> + 569 9812 5752</p>
-              </div>
-              <!-- Grid column -->
-            </div>
-            <!-- Grid row -->
+  </div>
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-white text-muted">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-sm-6 col-md-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase  fw-bold mb-4">
+              Grupo cero
+            </h6>
+            <p>
+              Somos un grupo de artistas plásticos dedicados a la pintura,
+              escultura, orfebrería, tejido y otras expresiones artísticas.
+
+            </p>
           </div>
-        </section>
-        <!-- Section: Links  -->
-  
-        <!-- Copyright -->
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-          © 2023 Copyright: grupocero.cl
-          <!-- <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a> -->
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-sm-6 col-md-3 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Páginas
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">inicio</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">nosotros</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">equipo</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-sm-6 col-md-3 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Nuestras redes
+            </h6>
+            <p>
+              <a href="#!"><i class="bi bi-twitter text-reset"></i></a>
+              <a href="#!" class="text-reset d-none d-sm-inline-block d-lg-none ms-2">Twitter</a>
+            </p>
+            <p>
+              <a href="#!"><i class="bi-instagram"></i></a>
+              <a href="#!" class="text-reset d-none d-sm-inline-block d-lg-none ms-2">Instagram</a>
+            </p>
+            <p>
+              <a href="#!"><i class="bi bi-facebook"></i></a>
+              <a href="#!" class="text-reset d-none d-sm-inline-block d-lg-none ms-2">Facebook</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-sm-6 col-md-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">contacto</h6> Antonio Varas 666, Providencia</p>
+            <p>
+              GrupoCero@duocuc.cl
+            </p>
+            <p>+ 569 4565 9878</p>
+            <p> + 569 9812 5752</p>
+          </div>
+          <!-- Grid column -->
         </div>
-        <!-- Copyright -->
-      </footer>
-        
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    </body>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+      © 2023 Copyright: grupocero.cl
+      <!-- <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a> -->
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

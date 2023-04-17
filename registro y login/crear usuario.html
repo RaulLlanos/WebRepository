@@ -14,28 +14,8 @@
     body {
       background: #ddd;
     }
-
-    /*estilo para que funcione el nav-scroller*/
-    .nav-scroller {
-      position: relative;
-      z-index: 2;
-      height: 2.75rem;
-      overflow-y: hidden;
-    }
-
-    .nav-scroller .nav {
-      display: flex;
-      flex-wrap: nowrap;
-      padding-bottom: 1rem;
-      margin-top: -1px;
-      overflow-x: auto;
-      text-align: center;
-      white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
-    }
   </style>
 </head>
-
 
 <body>
   <!-- Jumbotron -->
@@ -69,22 +49,6 @@
                 <span class="bi bi-cart-fill"></span>
                 <span class="badge rounded-pill bg-danger">1</span>
               </a>
-              -->
-
-            <!-- Notification 
-              <div class="dropdown">
-                <a class="text-decoration-none text-reset me-3 dropdown" href="#" id="navbarDropdownMenuLink"
-                  role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="bi bi-bell-fill"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Some news</a></li>
-                  <li><a class="dropdown-item" href="#">Another news</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                </ul>
-              </div>
               -->
 
             <!-- usuario -->
@@ -123,8 +87,6 @@
     </div>
   </div><!-- Jumbotron end -->
 
-
-
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg bg-light" aria-label="Offcanvas navbar large">
     <!-- al cambiar los break-points de la barra, conciderar que hay elementes dentro de esta a los que también habrá que cambiarlos -->
@@ -140,8 +102,7 @@
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Explora nuestras obras por:</h5>
           <!--titulo del offcanvas-->
-          <button type="button" class="btn-close btn-close" data-bs-dismiss="offcanvas"
-            aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div><!-- offcanvas-header end -->
         <!-- offcanvas-body -->
         <div class="offcanvas-body">
@@ -201,7 +162,7 @@
       <a class="nav-link" href="#">Explore</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="correo.html">Sign-in</a>
+      <a class="nav-link" href="login.html">Sign-in</a>
     </li>
     <li class="nav-item">
       <a class="nav-link disabled">Disabled</a>

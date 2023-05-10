@@ -10,7 +10,8 @@
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <!-- incons cdn -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-  <style>
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>  <style>
     body {
       background: #ddd;
     }
@@ -171,25 +172,25 @@
 
   <!-- Formulario para crear nuevo usuario -->
   <div class="container-fluid p-0 bg-dark text-white">
-    <form class="row mx-3">
+    <form class="row mx-3" method="get" id="nuevoUsuario" novalidate>
       <div class="col-md-6 pt-4">
         <div class="form-outline">
-          <input type="text" class="form-control" id="validationDefault01" placeholder="Nombres" required />
+          <input type="text" class="form-control" id="campoNombres" placeholder="Nombres" required />
         </div>
       </div>
       <div class="col-md-6 pt-4">
         <div class="form-outline">
-          <input type="text" class="form-control" id="validationDefault02" placeholder="Apellidos" required />
+          <input type="text" class="form-control" id="campoApellidos" placeholder="Apellidos" required />
         </div>
       </div>
       <div class="col-md-12 pt-4">
         <div class="input-group form-outline">
-          <input type="email" class="form-control" id="validationDefaultEmail" placeholder="Email" required />
+          <input type="email" class="form-control" id="campoEmail" placeholder="Email" required />
         </div>
       </div>
       <div class="col-md-12 pt-4">
         <div class="form-outline">
-          <input type="password" class="form-control" id="validationDefaultPassword" placeholder="Contraseña"
+          <input type="password" class="form-control" id="campoPassword" placeholder="Contraseña"
             required />
         </div>
       </div>
@@ -299,6 +300,55 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../js/sha1.js"></script>
+  <script>
+    function cifrar() {
+        var input_pass = document.getElementById("campoPassword");
+
+        input_pass.value = SHA1(input_pass.value);
+    }
+  </script>
+  <script>
+    $(document).ready(function () {
+      $('#nuevoUsuario').submit(function (event) {
+        var nombres = $('#campoNombres').val();
+        var apellidos = $('#campoApellidos').val();
+        var email = $('#campoEmail').val();
+        var password = $('#campoPassword').val();
+        var errores = '';
+
+        if (!nombres) {
+          errores += 'Por favor, ingrese su nombre.\n';
+        }
+
+        if (!apellidos) {
+          errores += 'Por favor, ingrese sus apellidos.\n';
+        }
+
+        if (!email || !/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/.test(email)) {
+          errores += 'Por favor, ingrese una dirección de correo electrónico válida.\n';
+        }
+
+        if (!password) {
+          errores += 'Por favor, ingrese una contraseña.\n';
+        }
+
+        if (!$('#invalidCheck2').is(':checked')) {
+          errores += 'Por favor, acepte los términos y condiciones.\n';
+        }
+
+        if (errores) {
+          alert(errores);
+          event.preventDefault();
+          return false;
+        }
+
+        cifrar();
+        return true;
+      })
+    });
+
+  </script>
 
 </body>
 

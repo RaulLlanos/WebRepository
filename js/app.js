@@ -1,137 +1,168 @@
-const stockProductos = [
-    {
-      id: 1,
-      nombre: "Pexels Steve Johnson",
-      cantidad: 1,
-      desc: "Pintura de 1 metro por 1,6 metros",
-      precio: 230000,
-      img: "img/pexels-steve-johnson.jpg",
-    },
-    {
-      id: 2,
-      nombre: "",
-      cantidad: 1,
-      desc: "",
-      precio: 1500,
-      img: "",
-    },
-    {
-      id: 3,
-      nombre: "",
-      cantidad: 1,
-      desc: "",
-      precio: 1570,
-      img: "",
-    },
-    {
-      id: 4,
-      nombre: "",
-      cantidad: 1,
-      desc: "",
-      precio: 1000,
-      img: "",
-    },
-    {
-      id: 5,
-      nombre: "",
-      cantidad: 1,
-      desc: "",
-      precio: 1200,
-      img: "",
-    },
-    {
-      id: 6,
-      nombre: "",
-      cantidad: 1,
-      desc: "",
-      precio: 1200,
-      img: "",
-    },
-    {
-      id: 7,
-      nombre: "",
-      cantidad: 1,
-      desc: "",
-      precio: 1400,
-      img: "",
-    },
-    {
-      id: 8,
-      nombre: "",
-      cantidad: 1,
-      desc: "",
-      precio: 1200,
-      img: "",
-    },
-    {
-      id: 9,
-      nombre: "",
-      cantidad: 1,
-      desc: "",
-      precio: 1400,
-      img: "",
-    },
-    {
-      id: 10,
-      nombre: "",
-      cantidad: 1,
-      desc: "",
-      precio: 1200,
-      img: "",
-    },
-  ];
-  let carrito = [];
-  
-  const contenedor = document.querySelector("#contenedor");
-  const carritoContenedor = document.querySelector("#carritoContenedor");
-  const vaciarCarrito = document.querySelector("#vaciarCarrito");
-  const precioTotal = document.querySelector("#precioTotal");
-  const activarFuncion = document.querySelector("#activarFuncion");
-  const procesarCompra = document.querySelector("#procesarCompra");
-  const totalProceso = document.querySelector("#totalProceso");
-  const formulario = document.querySelector('#procesar-pago')
-  
-  if (activarFuncion) {
-    activarFuncion.addEventListener("click", procesarPedido);
+document.addEventListener("DOMContentLoaded", traerProductos);
+const contenedor2 = document.querySelector("#contenedor");
+
+async function traerProductos() {
+  const url = "https://fakestoreapi.com/products";
+
+  try {
+    const resultado = await fetch(url);
+    const respuesta = await resultado.json();
+    pintarProductos(respuesta);
+  } catch (error) {
+    console.log(error);
   }
-  
-  document.addEventListener("DOMContentLoaded", () => {
-    carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  
-    mostrarCarrito();
-    document.querySelector("#activarFuncion").click(procesarPedido);
+}
+
+function pintarProductos(productos) {
+  console.log(productos);
+  productos.forEach((prod) => {
+    const { id, title, price, category, description, imagen } = prod;
+    contenedor.innerHTML += `
+    <div class="card" style="width: 18rem;">
+      <img src="${image}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">${title}</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    `;
   });
-  if(formulario){
-    formulario.addEventListener('submit', enviarCompra)
-  }
-  
-  
-  if (vaciarCarrito) {
-    vaciarCarrito.addEventListener("click", () => {
-      carrito.length = [];
-      mostrarCarrito();
-    });
-  }
-  
-  if (procesarCompra) {
-    procesarCompra.addEventListener("click", () => {
-      if (carrito.length === 0) {
-        Swal.fire({
-          title: "¡Tu carrito está vacio!",
-          text: "Compra algo para continuar con la compra",
-          icon: "error",
-          confirmButtonText: "Aceptar",
-        });
-      } else {
-        location.href = "compra.html";
-      }
-    });
-  }
-  
-  stockProductos.forEach((prod) => {
-    const { id, nombre, precio, desc, img, cantidad } = prod;
-    if (contenedor) {
-      contenedor.innerHTML += `
+}
+
+const stockProductos = [
+  {
+    id: 1,
+    nombre: "Pexels Steve Johnson",
+    cantidad: 1,
+    desc: "Pintura de 1 metro por 1,6 metros",
+    precio: 230000,
+    img: "img/pexels-steve-johnson.jpg",
+  },
+  {
+    id: 2,
+    nombre: "",
+    cantidad: 1,
+    desc: "",
+    precio: 1500,
+    img: "",
+  },
+  {
+    id: 3,
+    nombre: "",
+    cantidad: 1,
+    desc: "",
+    precio: 1570,
+    img: "",
+  },
+  {
+    id: 4,
+    nombre: "",
+    cantidad: 1,
+    desc: "",
+    precio: 1000,
+    img: "",
+  },
+  {
+    id: 5,
+    nombre: "",
+    cantidad: 1,
+    desc: "",
+    precio: 1200,
+    img: "",
+  },
+  {
+    id: 6,
+    nombre: "",
+    cantidad: 1,
+    desc: "",
+    precio: 1200,
+    img: "",
+  },
+  {
+    id: 7,
+    nombre: "",
+    cantidad: 1,
+    desc: "",
+    precio: 1400,
+    img: "",
+  },
+  {
+    id: 8,
+    nombre: "",
+    cantidad: 1,
+    desc: "",
+    precio: 1200,
+    img: "",
+  },
+  {
+    id: 9,
+    nombre: "",
+    cantidad: 1,
+    desc: "",
+    precio: 1400,
+    img: "",
+  },
+  {
+    id: 10,
+    nombre: "",
+    cantidad: 1,
+    desc: "",
+    precio: 1200,
+    img: "",
+  },
+];
+let carrito = [];
+
+const contenedor = document.querySelector("#contenedor");
+const carritoContenedor = document.querySelector("#carritoContenedor");
+const vaciarCarrito = document.querySelector("#vaciarCarrito");
+const precioTotal = document.querySelector("#precioTotal");
+const activarFuncion = document.querySelector("#activarFuncion");
+const procesarCompra = document.querySelector("#procesarCompra");
+const totalProceso = document.querySelector("#totalProceso");
+const formulario = document.querySelector("#procesar-pago");
+
+if (activarFuncion) {
+  activarFuncion.addEventListener("click", procesarPedido);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  mostrarCarrito();
+  document.querySelector("#activarFuncion").click(procesarPedido);
+});
+if (formulario) {
+  formulario.addEventListener("submit", enviarCompra);
+}
+
+if (vaciarCarrito) {
+  vaciarCarrito.addEventListener("click", () => {
+    carrito.length = [];
+    mostrarCarrito();
+  });
+}
+
+if (procesarCompra) {
+  procesarCompra.addEventListener("click", () => {
+    if (carrito.length === 0) {
+      Swal.fire({
+        title: "¡Tu carrito está vacio!",
+        text: "Compra algo para continuar con la compra",
+        icon: "error",
+        confirmButtonText: "Aceptar",
+      });
+    } else {
+      location.href = "compra.html";
+    }
+  });
+}
+
+stockProductos.forEach((prod) => {
+  const { id, nombre, precio, desc, img, cantidad } = prod;
+  if (contenedor) {
+    contenedor.innerHTML += `
       <div class="card mt-3" style="width: 18rem;">
       <img class="card-img-top mt-2" src="${img}" alt="Card image cap">
       <div class="card-body">
@@ -143,34 +174,33 @@ const stockProductos = [
       </div>
     </div>
       `;
-    }
-  });
-  
-  const agregarProducto = (id) => {
-    const existe = carrito.some(prod => prod.id === id)
-  
-    if(existe){
-      const prod = carrito.map(prod => {
-        if(prod.id === id){
-          prod.cantidad++
-        }
-      })
-    } else {
-      const item = stockProductos.find((prod) => prod.id === id)
-      carrito.push(item)
-    }
-    mostrarCarrito()
-  
-  };
-  
-  const mostrarCarrito = () => {
-    const modalBody = document.querySelector(".modal .modal-body");
-    if (modalBody) {
-      modalBody.innerHTML = "";
-      carrito.forEach((prod) => {
-        const { id, nombre, precio, desc, img, cantidad } = prod;
-        console.log(modalBody);
-        modalBody.innerHTML += `
+  }
+});
+
+const agregarProducto = (id) => {
+  const existe = carrito.some((prod) => prod.id === id);
+
+  if (existe) {
+    const prod = carrito.map((prod) => {
+      if (prod.id === id) {
+        prod.cantidad++;
+      }
+    });
+  } else {
+    const item = stockProductos.find((prod) => prod.id === id);
+    carrito.push(item);
+  }
+  mostrarCarrito();
+};
+
+const mostrarCarrito = () => {
+  const modalBody = document.querySelector(".modal .modal-body");
+  if (modalBody) {
+    modalBody.innerHTML = "";
+    carrito.forEach((prod) => {
+      const { id, nombre, precio, desc, img, cantidad } = prod;
+      console.log(modalBody);
+      modalBody.innerHTML += `
         <div class="modal-contenedor">
           <div>
           <img class="img-fluid img-carrito" src="${img}"/>
@@ -185,45 +215,45 @@ const stockProductos = [
         
     
         `;
-      });
-    }
-  
-    if (carrito.length === 0) {
-      console.log("Nada");
-      modalBody.innerHTML = `
+    });
+  }
+
+  if (carrito.length === 0) {
+    console.log("Nada");
+    modalBody.innerHTML = `
       <p class="text-center text-primary parrafo">¡Aun no agregaste nada!</p>
       `;
-    } else {
-      console.log("Algo");
-    }
-    carritoContenedor.textContent = carrito.length;
-  
-    if (precioTotal) {
-      precioTotal.innerText = carrito.reduce(
-        (acc, prod) => acc + prod.cantidad * prod.precio,
-        0
-      );
-    }
-  
-    guardarStorage();
-  };
-  
-  function guardarStorage() {
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+  } else {
+    console.log("Algo");
   }
-  
-  function eliminarProducto(id) {
-    const juegoId = id;
-    carrito = carrito.filter((juego) => juego.id !== juegoId);
-    mostrarCarrito();
+  carritoContenedor.textContent = carrito.length;
+
+  if (precioTotal) {
+    precioTotal.innerText = carrito.reduce(
+      (acc, prod) => acc + prod.cantidad * prod.precio,
+      0
+    );
   }
-  function procesarPedido() {
-    carrito.forEach((prod) => {
-      const listaCompra = document.querySelector("#lista-compra tbody");
-      const { id, nombre, precio, img, cantidad } = prod;
-      if (listaCompra) {
-        const row = document.createElement("tr");
-        row.innerHTML += `
+
+  guardarStorage();
+};
+
+function guardarStorage() {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+function eliminarProducto(id) {
+  const juegoId = id;
+  carrito = carrito.filter((juego) => juego.id !== juegoId);
+  mostrarCarrito();
+}
+function procesarPedido() {
+  carrito.forEach((prod) => {
+    const listaCompra = document.querySelector("#lista-compra tbody");
+    const { id, nombre, precio, img, cantidad } = prod;
+    if (listaCompra) {
+      const row = document.createElement("tr");
+      row.innerHTML += `
                 <td>
                 <img class="img-fluid img-carrito" src="${img}"/>
                 </td>
@@ -232,70 +262,76 @@ const stockProductos = [
               <td>${cantidad}</td>
               <td>${precio * cantidad}</td>
               `;
-        listaCompra.appendChild(row);
-      }
-    });
-    totalProceso.innerText = carrito.reduce(
-      (acc, prod) => acc + prod.cantidad * prod.precio,
-      0
-    );
-  }
-  
-   function enviarCompra(e){
-     e.preventDefault()
-     const cliente = document.querySelector('#cliente').value
-     const email = document.querySelector('#correo').value
-  
-     if(email === '' || cliente == ''){
-       Swal.fire({
-         title: "¡Debes completar tu email y nombre!",
-         text: "Rellena el formulario",
-         icon: "error",
-         confirmButtonText: "Aceptar",
-     })
-   } else {
-  
-    const btn = document.getElementById('button');
-  
-  // document.getElementById('procesar-pago')
-  //  .addEventListener('submit', function(event) {
-  //    event.preventDefault();
-  
-     btn.value = 'Enviando...';
-  
-     const serviceID = 'default_service';
-     const templateID = 'template_qxwi0jn';
-  
-     emailjs.sendForm(serviceID, templateID, this)
-      .then(() => {
-        btn.value = 'Finalizar compra';
-        alert('Correo enviado!');
-      }, (err) => {
-        btn.value = 'Finalizar compra';
-        alert(JSON.stringify(err));
-      });
-      
-     const spinner = document.querySelector('#spinner')
-     spinner.classList.add('d-flex')
-     spinner.classList.remove('d-none')
-  
-     setTimeout(() => {
-       spinner.classList.remove('d-flex')
-       spinner.classList.add('d-none')
-       formulario.reset()
-  
-       const alertExito = document.createElement('p')
-       alertExito.classList.add('alert', 'alerta', 'd-block', 'text-center', 'col-12', 'mt-2', 'alert-success')
-       alertExito.textContent = 'Compra realizada correctamente'
-       formulario.appendChild(alertExito)
-  
-       setTimeout(() => {
-         alertExito.remove()
-       }, 3000)
-  
-  
-     }, 3000)
+      listaCompra.appendChild(row);
     }
-   localStorage.clear()
-  
+  });
+  totalProceso.innerText = carrito.reduce(
+    (acc, prod) => acc + prod.cantidad * prod.precio,
+    0
+  );
+}
+
+function enviarCompra(e) {
+  e.preventDefault();
+  const cliente = document.querySelector("#cliente").value;
+  const email = document.querySelector("#correo").value;
+
+  if (email === "" || cliente == "") {
+    Swal.fire({
+      title: "¡Debes completar tu email y nombre!",
+      text: "Rellena el formulario",
+      icon: "error",
+      confirmButtonText: "Aceptar",
+    });
+  } else {
+    const btn = document.getElementById("button");
+
+    // document.getElementById('procesar-pago')
+    //  .addEventListener('submit', function(event) {
+    //    event.preventDefault();
+
+    btn.value = "Enviando...";
+
+    const serviceID = "default_service";
+    const templateID = "template_qxwi0jn";
+
+    emailjs.sendForm(serviceID, templateID, this).then(
+      () => {
+        btn.value = "Finalizar compra";
+        alert("Correo enviado!");
+      },
+      (err) => {
+        btn.value = "Finalizar compra";
+        alert(JSON.stringify(err));
+      }
+    );
+
+    const spinner = document.querySelector("#spinner");
+    spinner.classList.add("d-flex");
+    spinner.classList.remove("d-none");
+
+    setTimeout(() => {
+      spinner.classList.remove("d-flex");
+      spinner.classList.add("d-none");
+      formulario.reset();
+
+      const alertExito = document.createElement("p");
+      alertExito.classList.add(
+        "alert",
+        "alerta",
+        "d-block",
+        "text-center",
+        "col-12",
+        "mt-2",
+        "alert-success"
+      );
+      alertExito.textContent = "Compra realizada correctamente";
+      formulario.appendChild(alertExito);
+
+      setTimeout(() => {
+        alertExito.remove();
+      }, 3000);
+    }, 3000);
+  }
+  localStorage.clear();
 }

@@ -1,35 +1,3 @@
-document.addEventListener("DOMContentLoaded", traerProductos);
-const contenedor2 = document.querySelector("#contenedor");
-
-async function traerProductos() {
-  const url = "https://fakestoreapi.com/products";
-
-  try {
-    const resultado = await fetch(url);
-    const respuesta = await resultado.json();
-    pintarProductos(respuesta);
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-function pintarProductos(productos) {
-  console.log(productos);
-  productos.forEach((prod) => {
-    const { id, title, price, category, description, imagen } = prod;
-    contenedor.innerHTML += `
-    <div class="card" style="width: 18rem;">
-      <img src="${image}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">${title}</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    `;
-  });
-}
-
 const stockProductos = [
   {
     id: 1,
@@ -41,11 +9,11 @@ const stockProductos = [
   },
   {
     id: 2,
-    nombre: "",
+    nombre: "vasija-con-asas-zoomorfas",
     cantidad: 1,
     desc: "",
     precio: 1500,
-    img: "",
+    img: "vasija-con-asas-zoomorfas.jpg",
   },
   {
     id: 3,

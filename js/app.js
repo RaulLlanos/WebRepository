@@ -122,7 +122,7 @@ if (procesarCompra) {
         confirmButtonText: "Aceptar",
       });
     } else {
-      location.href = "compra.html";
+      location.href = "compra.html"; //será "/compra/compra.html"
     }
   });
 }
